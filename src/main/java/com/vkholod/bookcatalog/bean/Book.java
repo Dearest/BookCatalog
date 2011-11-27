@@ -1,5 +1,7 @@
 package com.vkholod.bookcatalog.bean;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,59 +13,70 @@ import javax.persistence.Table;
 public class Book {
 
 	@Id
-	@Column(name = "id")
 	@GeneratedValue
-	private int id;
+	@Column(name = "book_id")
+	private int bookID;
 
-	@Column(name = "name")
-	private String name;
+	@Column(name = "book_name")
+	private String bookName;
 
-	@Column(name = "year")
-	private double year;
+	@Column(name = "year_published")
+	private Date yearPublished;
 
-	@Column(name = "isbn")
-	private String isbn;
+	@Column(name = "book_isbn")
+	private String bookISBN;
 
-	@Column(name = "publisher")
-	private String publisher;
-
-	public int getId() {
-		return id;
+	@Column(name = "book_publisher")
+	private String bookPublisher;
+	
+	public Book() {
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public Book(String bookName, Date yearPublished, String bookISBN, String bookPublisher) {
+		super();
+		this.bookName = bookName;
+		this.yearPublished = yearPublished;
+		this.bookISBN = bookISBN;
+		this.bookPublisher = bookPublisher;
 	}
 
-	public String getName() {
-		return name;
+	public int getBookID() {
+		return bookID;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setBookID(int bookID) {
+		this.bookID = bookID;
 	}
 
-	public double getYear() {
-		return year;
+	public String getBookName() {
+		return bookName;
 	}
 
-	public void setYear(double year) {
-		this.year = year;
+	public void setBookName(String bookName) {
+		this.bookName = bookName;
 	}
 
-	public String getIsbn() {
-		return isbn;
+	public Date getYearPublished() {
+		return yearPublished;
 	}
 
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
+	public void setYearPublished(Date yearPublished) {
+		this.yearPublished = yearPublished;
 	}
 
-	public String getPublisher() {
-		return publisher;
+	public String getBookISBN() {
+		return bookISBN;
 	}
 
-	public void setPublisher(String publisher) {
-		this.publisher = publisher;
+	public void setBookISBN(String bookISBN) {
+		this.bookISBN = bookISBN;
+	}
+
+	public String getBookPublisher() {
+		return bookPublisher;
+	}
+
+	public void setBookPublisher(String bookPublisher) {
+		this.bookPublisher = bookPublisher;
 	}
 }
